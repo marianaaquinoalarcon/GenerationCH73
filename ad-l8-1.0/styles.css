@@ -55,7 +55,7 @@
   box-shadow: 0 0 0 .25rem rgba(173, 70, 118, .25);
 }
 
-/* ============ ESTRUCTURA GENERAL ============ */
+/* ESTRUCTURA  */
 html { scroll-behavior: smooth; }
 body {
   display: flex;
@@ -64,7 +64,7 @@ body {
 }
 main { flex: 1 0 auto; }
 
-/* ============ ENCABEZADO (banda oscura) ============ */
+/* ENCABEZADO (banda oscura) */
 .site-header {
   background: var(--c-indigo);
   color: var(--c-menta);
@@ -86,7 +86,7 @@ main { flex: 1 0 auto; }
   font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
-/* ============ NAVBAR (siempre visible) ============ */
+/*NAVBAR (siempre visible) */
 .site-nav {
   position: sticky;      /* se queda pegada arriba al hacer scroll */
   top: 0;
@@ -119,7 +119,7 @@ main { flex: 1 0 auto; }
   font-weight: 700;
 }
 
-/* ============ PANELES (AD | Contenido | News) ============ */
+/* PANELES (AD | Contenido | News) */
 .panel {
   height: 100%;
   background: #fff;
@@ -157,7 +157,7 @@ main { flex: 1 0 auto; }
 .noticia + .noticia { margin-top: 1rem; }
 .noticia small { opacity: .8; }
 
-/* ============ FOOTER (moderno y compacto) ============ */
+/* FOOTER (moderno y compacto) */
 .site-footer {
   background: var(--c-indigo);
   color: var(--c-menta);
@@ -172,7 +172,7 @@ main { flex: 1 0 auto; }
 .site-footer a:hover { color: var(--c-menta); text-decoration: underline; }
 .site-footer .pie-enlaces { display: flex; gap: 1rem; }
 
-/* ============ AJUSTES RESPONSIVOS ============ */
+/* AJUSTES RESPONSIVOS */
 @media (max-width: 767.98px) {
   .site-header { padding: 1.25rem 0 1rem; }
   .site-nav .nav-link { padding: .6rem .9rem; font-size: .95rem; }

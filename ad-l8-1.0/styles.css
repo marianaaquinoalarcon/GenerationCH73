@@ -1,0 +1,185 @@
+/* PALETA PERSONALIZADA */
+:root {
+  --c-menta:  #E9F9E9;  /* fondo general */
+  --c-arena:  #E9CA93;  /* navbar y paneles laterales */
+  --c-coral:  #EB8B69;  /* acentos */
+  --c-ciruela:#AD4676;  /* acción / enlace activo */
+  --c-indigo: #484C76;  /* texto, header y footer */
+
+  --bs-body-bg: var(--c-menta);
+  --bs-body-color: var(--c-indigo);
+  --bs-primary: var(--c-ciruela);
+  --bs-primary-rgb: 173, 70, 118;
+  --bs-secondary: var(--c-indigo);
+  --bs-secondary-rgb: 72, 76, 118;
+  --bs-warning: var(--c-arena);
+  --bs-warning-rgb: 233, 202, 147;
+  --bs-danger: var(--c-coral);
+  --bs-danger-rgb: 235, 139, 105;
+  --bs-link-color: var(--c-ciruela);
+  --bs-link-hover-color: var(--c-indigo);
+  --bs-link-color-rgb: 173, 70, 118;
+  --bs-link-hover-color-rgb: 72, 76, 118;
+  --bs-border-radius: .6rem;
+  --bs-font-sans-serif: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Utilidades de color */
+.bg-menta   { background-color: var(--c-menta)   !important; }
+.bg-arena   { background-color: var(--c-arena)   !important; }
+.bg-coral   { background-color: var(--c-coral)   !important; }
+.bg-ciruela { background-color: var(--c-ciruela) !important; }
+.bg-indigo  { background-color: var(--c-indigo)  !important; }
+.text-menta   { color: var(--c-menta)   !important; }
+.text-arena   { color: var(--c-arena)   !important; }
+.text-coral   { color: var(--c-coral)   !important; }
+.text-ciruela { color: var(--c-ciruela) !important; }
+.text-indigo  { color: var(--c-indigo)  !important; }
+
+/* Botones */
+.btn-primary {
+  --bs-btn-bg: var(--c-ciruela);
+  --bs-btn-border-color: var(--c-ciruela);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--c-indigo);
+  --bs-btn-hover-border-color: var(--c-indigo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--c-indigo);
+  --bs-btn-active-border-color: var(--c-indigo);
+  --bs-btn-focus-shadow-rgb: 173, 70, 118;
+}
+
+/* Formularios */
+.form-control:focus {
+  border-color: var(--c-ciruela);
+  box-shadow: 0 0 0 .25rem rgba(173, 70, 118, .25);
+}
+
+/* ============ ESTRUCTURA GENERAL ============ */
+html { scroll-behavior: smooth; }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1 0 auto; }
+
+/* ============ ENCABEZADO (banda oscura) ============ */
+.site-header {
+  background: var(--c-indigo);
+  color: var(--c-menta);
+  text-align: center;
+  padding: 2rem 0 1.75rem;
+}
+.site-header .marca {
+  display: block;
+  margin-bottom: .25rem;
+  font-size: .8rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--c-arena);
+}
+.site-header h1 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+/* ============ NAVBAR (siempre visible) ============ */
+.site-nav {
+  position: sticky;      /* se queda pegada arriba al hacer scroll */
+  top: 0;
+  z-index: 1030;
+  background: var(--c-arena);
+  border-block: 2px solid var(--c-indigo);
+  box-shadow: 0 .25rem .75rem rgba(72, 76, 118, .18);
+}
+.site-nav .nav-item { position: relative; }
+.site-nav .nav-item + .nav-item::before {   /* separador vertical */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 2px;
+  background: var(--c-indigo);
+}
+.site-nav .nav-link {
+  color: var(--c-indigo);
+  font-weight: 500;
+  padding: .7rem 1.5rem;
+  transition: background-color .2s, color .2s;
+}
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus-visible { background: var(--c-menta); color: var(--c-ciruela); }
+.site-nav .nav-link.active {
+  background: var(--c-ciruela);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ============ PANELES (AD | Contenido | News) ============ */
+.panel {
+  height: 100%;
+  background: #fff;
+  border: 1px solid rgba(72, 76, 118, .3);
+  border-radius: var(--bs-border-radius);
+  padding: 1.25rem;
+}
+.panel-contenido { min-height: 60vh; }
+.panel-lateral { background: var(--c-arena); }
+.panel-ad {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 12rem;
+}
+.panel-ad .etiqueta {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+.panel-ad .ad-caja {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 9rem;
+  border: 2px dashed var(--c-indigo);
+  border-radius: var(--bs-border-radius);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* Noticias */
+.noticia { padding-left: .75rem; border-left: 4px solid var(--c-coral); }
+.noticia + .noticia { margin-top: 1rem; }
+.noticia small { opacity: .8; }
+
+/* ============ FOOTER (moderno y compacto) ============ */
+.site-footer {
+  background: var(--c-indigo);
+  color: var(--c-menta);
+  font-size: .85rem;
+  padding: .7rem 0;
+  border-top: 3px solid var(--c-coral);
+}
+.site-footer a {
+  color: var(--c-arena);
+  text-decoration: none;
+}
+.site-footer a:hover { color: var(--c-menta); text-decoration: underline; }
+.site-footer .pie-enlaces { display: flex; gap: 1rem; }
+
+/* ============ AJUSTES RESPONSIVOS ============ */
+@media (max-width: 767.98px) {
+  .site-header { padding: 1.25rem 0 1rem; }
+  .site-nav .nav-link { padding: .6rem .9rem; font-size: .95rem; }
+  .panel-contenido { min-height: 40vh; }
+  .panel-ad { min-height: 8rem; }
+  .panel-ad .ad-caja { min-height: 5rem; }
+}
+@media (max-width: 400px) {
+  .site-nav .nav-link { padding: .55rem .6rem; font-size: .85rem; }
+}

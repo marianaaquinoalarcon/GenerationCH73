@@ -73,3 +73,8 @@ async function loadColorsFromStorage() {
 
 fetchColorsList();
 loadColorsFromStorage();
+
+document.querySelector("#bBorrar").addEventListener("click",()=>{
+  // funcion para borrar todo lo que esta dentro del contenedor, html vacio
+  itemsContainer.innerHTML = "";
+});

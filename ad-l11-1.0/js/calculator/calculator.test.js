@@ -24,3 +24,12 @@ test('Divide 10 entre 2',()=>{
 test('Divide 12.5 entre 2',()=>{
   expect(calculator.divide(12.5,2)).toBe(6.25);
 });
+
+// pruebas para multiply
+test('Multiplica 13 * 50',()=>{
+  expect(calculator.multiply(13,50)).toBe(650);
+});
+
+test('Multiplica 2.2 * 3.3',()=>{
+  expect(calculator.multiply(2.2,3.3)).toBe(7.26);
+})

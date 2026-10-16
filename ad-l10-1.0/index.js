@@ -28,13 +28,30 @@ function addItem(item) {
   itemsContainer.append(colourCardBreak)
 }
 
-function fetchColorsList() {
-  
+async function fetchColorsList() {
+  try {
+    // Consultar datos del api
+    const reponse = await fetch("https://reqres.in/api/unknown");
+    //  si hay algun error en la consulta y/o viene vacio 
+    if (!reponse.ok) {
+      throw new Error('Error al consultar los datos' + reponse.statusText);
+    }
+
+    // hacer mi respuesta en formato json
+    const datos = await reponse.json();
+    // mostrar datos disponibles en consola 
+    console.log(datos.data);
+
+
+    // captura el error y los muestra en consola 
+  } catch (error) {
+    console.error('Hubo un error al consultar datos');
+  }
 }
 
 function loadColorsFromStorage() {
-  
+
 }
 
-fetchColorsList()
-loadColorsFromStorage()
+fetchColorsList();
+loadColorsFromStorage();

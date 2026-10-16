@@ -78,3 +78,8 @@ document.querySelector("#bBorrar").addEventListener("click",()=>{
   // funcion para borrar todo lo que esta dentro del contenedor, html vacio
   itemsContainer.innerHTML = "";
 });
+
+document.querySelector("#bCrear").addEventListener("click",()=>{
+  // funcion para crear lista
+  fetchColorsList();
+});

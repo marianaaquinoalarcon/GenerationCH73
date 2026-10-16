@@ -47,6 +47,12 @@ async function fetchColorsList() {
     console.log(datos.data);
 
     lista = datos.data;
+    
+    // el foreach para sacar dato por dato y enviar a la fucnion creadora
+  lista.forEach(element => {
+    console.log(element);
+    addItem(element);
+  });
 
     localStorage.setItem("ColorList",JSON.stringify(lista));
 
@@ -56,21 +62,14 @@ async function fetchColorsList() {
     console.error('Hubo un error al consultar datos');
   }
 
-  return lista;
 }
 
-//funcion asincronica para que espere a los resultados de la API
 async function loadColorsFromStorage() {
-  // se indica que es una funcion asincrona
-  let item = await fetchColorsList();
-  console.log(item);
-
-  // el foreach para sacar dato por dato y enviar a la fucnion creadora
-  item.forEach(element => {
-    console.log(element);
-    addItem(element);
-  });
+  // funcion para mostrar la lista del local storage en consola
+  const listaStorage = localStorage.getItem("ColorList");
+  console.log(`La lista guardada en almacenamiento local es:  ${listaStorage}`); 
 }
 
 
+fetchColorsList();
 loadColorsFromStorage();

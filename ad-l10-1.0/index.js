@@ -48,6 +48,8 @@ async function fetchColorsList() {
 
     lista = datos.data;
 
+    localStorage.setItem("ColorList",JSON.stringify(lista));
+
 
     // captura el error y los muestra en consola 
   } catch (error) {

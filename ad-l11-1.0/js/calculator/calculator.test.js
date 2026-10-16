@@ -15,3 +15,12 @@ test('subtract 5 - 4 to equal 1', () => {
 test('subtract -5 - -10 to equal 5', () => {
   expect(calculator.subtract(-5, -10)).toBe(5);
 });
+
+// pruebas para divide
+test('Divide 10 entre 2',()=>{
+  expect(calculator.divide(10,2)).toBe(5);
+});
+
+test('Divide 12.5 entre 2',()=>{
+  expect(calculator.divide(12.5,2)).toBe(6.25);
+});

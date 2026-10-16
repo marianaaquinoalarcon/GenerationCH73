@@ -1,5 +1,7 @@
+
 const itemsContainer = document.querySelector("#list-items")
 
+// funcion creadora solo recibe un elemento a la vez, no puedo enviar el array completo
 function addItem(item) {
   const colourCard = document.createElement("section")
   colourCard.className = "card w-75"
@@ -29,6 +31,8 @@ function addItem(item) {
 }
 
 async function fetchColorsList() {
+  // variable para tener un retorno a funcion creadora de lista
+  let lista = [];
   try {
     // Consultar datos del api
     const reponse = await fetch("https://reqres.in/api/unknown");
@@ -42,16 +46,29 @@ async function fetchColorsList() {
     // mostrar datos disponibles en consola 
     console.log(datos.data);
 
+    lista = datos.data;
+
 
     // captura el error y los muestra en consola 
   } catch (error) {
     console.error('Hubo un error al consultar datos');
   }
+
+  return lista;
 }
 
-function loadColorsFromStorage() {
+//funcion asincronica para que espere a los resultados de la API
+async function loadColorsFromStorage() {
+  // se indica que es una funcion asincrona
+  let item = await fetchColorsList();
+  console.log(item);
 
+  // el foreach para sacar dato por dato y enviar a la fucnion creadora
+  item.forEach(element => {
+    console.log(element);
+    addItem(element);
+  });
 }
 
-fetchColorsList();
+
 loadColorsFromStorage();

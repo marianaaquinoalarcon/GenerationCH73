@@ -6,7 +6,12 @@ const subtract = function(a, b) {
 }
 
 function divide(a, b){
-  return a / b;
+  if (b === 0) {
+    return "No se puede dividir entre 0, es resultado infinito";
+  } else {
+    return a / b;
+    
+  }
 }
 
 function multiply(a, b){

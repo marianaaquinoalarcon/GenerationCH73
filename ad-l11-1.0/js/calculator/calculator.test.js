@@ -25,6 +25,11 @@ test('Divide 12.5 entre 2',()=>{
   expect(calculator.divide(12.5,2)).toBe(6.25);
 });
 
+test('Divide 12 entre 0',()=>{
+  expect(calculator.divide(12,0)).toEqual("No se puede dividir entre 0, es resultado infinito");
+  expect(calculator.divide(0,12)).toBe(0);
+});
+
 // pruebas para multiply
 test('Multiplica 13 * 50',()=>{
   expect(calculator.multiply(13,50)).toBe(650);

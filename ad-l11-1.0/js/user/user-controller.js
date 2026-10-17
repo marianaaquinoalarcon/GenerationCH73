@@ -9,7 +9,12 @@ class UserController{
     }
 
     add(user){
-        this.users.push(user);
+        // este metodo se modificara por que push agrega hasta valores nulos 
+        if (!user || !user.id) {
+            return;
+        }else{
+            this.users.push(user);
+        }
     }
 
     remove(user){

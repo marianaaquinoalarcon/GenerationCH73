@@ -32,4 +32,5 @@ test('Multiplica 13 * 50',()=>{
 
 test('Multiplica 2.2 * 3.3',()=>{
   expect(calculator.multiply(2.2,3.3)).toBe(7.26);
-})
+});
+
